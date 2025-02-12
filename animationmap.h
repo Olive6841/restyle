@@ -19,6 +19,27 @@ typedef enum TA_PROPERTY_PRIV
     TAP_PERSPECTIVE = 258
 } TA_PROPERTY_PRIV;
 
+typedef enum TA_TRANSFORM_FLAG_EXT
+{
+    TATF_USE_X_ONLY = 0x1000,
+    TATF_USE_Y_ONLY = 0x2000,
+    TATF_USE_Z_ONLY = 0x4000
+} TA_TRANSFORM_FLAG_EXT;
+
+typedef struct TA_TRANSFORM_3D
+{
+    TA_TRANSFORM header;
+    float rX;
+    float rY;
+    float rZ;
+    float rInitialX;
+    float rInitialY;
+    float rInitialZ;
+    float rOriginX;
+    float rOriginY;
+    float rOriginZ;
+} TA_TRANSFORM_3D, *PTA_TRANSFORM_3D;
+
 enum class AnimationSymbol : int
 {
     TimingFunction,
